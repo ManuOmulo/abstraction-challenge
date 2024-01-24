@@ -14,7 +14,26 @@ public class Store {
     products.add(pork);
 
     ArrayList<OrderItem> order1 = new ArrayList<>();
-    order1.add(new OrderItem(10, tomato));
-    order1.add(new OrderItem(3, beef));
+    addItem(order1, beef, 3);
+    addItem(order1, tomato, 10);
+    printReceipt(order1);
+
+  }
+
+  public static void addItem(ArrayList<OrderItem> list, ProductForSale item, int quantity) {
+    list.add(new OrderItem(quantity, item));
+  }
+
+  public static void printReceipt(ArrayList<OrderItem> list) {
+    double total = 0;
+    System.out.println("---------- Receipt -----------");
+    for (OrderItem item : list) {
+      double itemCost = item.product().getSalePrice(item.quantity());
+      item.product().pricedLineItem(item.quantity());
+      total += itemCost;
+    }
+    System.out.println("_".repeat(30));
+    System.out.printf("%-18s Ksh %.2f \n", "Total", total);
+    System.out.println("_".repeat(30));
   }
 }
