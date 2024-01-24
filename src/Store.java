@@ -12,6 +12,7 @@ public class Store {
     products.add(beef);
     products.add(tomato);
     products.add(pork);
+    printProductList(products);
 
     ArrayList<OrderItem> order1 = new ArrayList<>();
     addItem(order1, beef, 3);
@@ -35,5 +36,13 @@ public class Store {
     System.out.println("_".repeat(30));
     System.out.printf("%-18s Ksh %.2f \n", "Total", total);
     System.out.println("_".repeat(30));
+  }
+
+  public static void printProductList(ArrayList<ProductForSale> products) {
+    System.out.println("STORE PRODUCTS");
+    for (ProductForSale product : products) {
+      System.out.printf("%s - %s \n", product.getType(), product.getDescription());
+    }
+    System.out.println();
   }
 }
