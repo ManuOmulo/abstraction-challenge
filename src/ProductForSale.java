@@ -26,7 +26,7 @@ public abstract class ProductForSale {
   }
 
   public void pricedLineItem(int quantity) {
-    System.out.printf("%d x %-18s %.2f \n", quantity, type, getSalePrice(quantity));
+    System.out.printf("%2d x %-17s %.2f \n", quantity, type, getSalePrice(quantity));
   }
 
   public abstract void showDetails();
