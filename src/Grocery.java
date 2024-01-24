@@ -6,6 +6,6 @@ public class Grocery extends ProductForSale {
 
   @Override
   public void showDetails() {
-
+    System.out.printf("%s - %s at %.2f each\n", getType(), getDescription(), getPrice());
   }
 }

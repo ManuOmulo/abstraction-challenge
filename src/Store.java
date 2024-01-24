@@ -4,9 +4,9 @@ record OrderItem(int quantity, ProductForSale product){};
 
 public class Store {
   public static void main(String[] args) {
-    var beef = new Meat("Beef", 600, "Cow meat at Ksh 600 per kg");
+    var beef = new Meat("Beef", 600, "Cow meat");
     var tomato = new Grocery("Tomato", 50, "Organic tomatoes");
-    var pork = new Meat("Pork", 450, "Halal pork at Ksh 450 per kg");
+    var pork = new Meat("Pork", 450, "Halal pork");
 
     ArrayList<ProductForSale> products = new ArrayList<>();
     products.add(beef);
@@ -41,7 +41,7 @@ public class Store {
   public static void printProductList(ArrayList<ProductForSale> products) {
     System.out.println("STORE PRODUCTS");
     for (ProductForSale product : products) {
-      System.out.printf("%s - %s \n", product.getType(), product.getDescription());
+      product.showDetails();
     }
     System.out.println();
   }

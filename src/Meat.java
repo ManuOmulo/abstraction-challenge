@@ -6,6 +6,6 @@ public class Meat extends ProductForSale {
 
   @Override
   public void showDetails() {
-
+    System.out.printf("%s - %s @ %.2f/kg\n", getType(), getDescription(), getPrice());
   }
 }

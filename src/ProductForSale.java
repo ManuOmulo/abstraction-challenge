@@ -17,6 +17,10 @@ public abstract class ProductForSale {
     return description;
   }
 
+  public double getPrice() {
+    return price;
+  }
+
   public double getSalePrice(int quantity) {
     return (double) quantity * price;
   }
